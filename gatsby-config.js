@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env`,
 })
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-cosmicjs',
       options: {
-        bucketSlug: process.env.COSMIC_BUCKET,
+        bucketSlug: process.env.COSMIC_BUCKET_SLUG,
         objectTypes: ['posts','settings'],
         apiAccess: {
           read_key: process.env.COSMIC_READ_KEY,
