@@ -11,6 +11,10 @@ import { rhythm, scale } from '../utils/typography'
 import 'typeface-montserrat'
 import 'typeface-merriweather'
 
+// Import fonts
+import "@fontsource/open-sans"
+import "@fontsource/open-sans/800.css"
+
 export default ({ children, location }) => (
   <StaticQuery
     query={graphql`
@@ -60,11 +64,12 @@ export default ({ children, location }) => (
             <h1
               style={{
                 ...scale(1.3),
+                fontFamily: "Open Sans",
                 position: 'absolute',
-                textAlign: 'center',
+                textAlign: 'right',
                 left: 0,
                 right: 0,
-                top: rhythm(4),
+                top: rhythm(6),
                 marginTop: '0',
                 height: rhythm(2.5),
               }}
@@ -86,7 +91,7 @@ export default ({ children, location }) => (
         header = (
           <h3
             style={{
-              fontFamily: 'Montserrat, sans-serif',
+              fontFamily: "Open Sans",
               marginTop: 0,
               marginBottom: rhythm(-1),
               marginLeft: 'auto',
@@ -109,7 +114,9 @@ export default ({ children, location }) => (
         )
       }
       return (
-        <div>
+        <div style={{
+          fontFamily: "Open Sans",
+        }}>
           {header}
           <div
             style={{
@@ -127,45 +134,15 @@ export default ({ children, location }) => (
               textAlign: 'center',
               padding: `0 20px 80px 0`,
             }}
-          >
-            powered by&nbsp;
+          >2021@
             <a
               target="_blank"
-              href="https://gatsbyjs.org"
+              href="https://tystar.cz/"
               style={{
-                color: '#191919',
+                color: '#3d81a3',
                 boxShadow: 'none',
               }}
-            >
-              <img
-                src={gatsbyLogo}
-                alt="Gatsby JS"
-                style={{
-                  width: '20px',
-                  margin: '0 4px -3px 2px',
-                }}
-              />
-              <strong>Gatsby</strong>
-            </a>
-            &nbsp;and&nbsp;
-            <a
-              target="_blank"
-              href="https://cosmicjs.com"
-              style={{
-                color: '#191919',
-                boxShadow: 'none',
-              }}
-            >
-              <img
-                src={cosmicjsLogo}
-                alt="Cosmic JS"
-                style={{
-                  width: '18px',
-                  margin: '0 4px -2px 5px',
-                }}
-              />
-              <strong>Cosmic JS</strong>
-            </a>
+            >tystar</a>
           </footer>
         </div>
       )
