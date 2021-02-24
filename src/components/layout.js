@@ -3,8 +3,6 @@ import { Link } from 'gatsby'
 import { StaticQuery, graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
-import cosmicjsLogo from '../../static/cosmicjs.svg'
-import gatsbyLogo from '../../static/gatsby.png'
 import { rhythm, scale } from '../utils/typography'
 
 // Import typefaces
@@ -125,6 +123,7 @@ export default ({ children, location }) => (
               maxWidth: rhythm(24),
               padding: `0 ${rhythm(3 / 4)} ${rhythm(1.5)} ${rhythm(3 / 4)}`,
               minHeight: 'calc(100vh - 42px)',
+              boxSizing: 'border-box',
             }}
           >
             {children}

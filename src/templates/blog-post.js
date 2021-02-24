@@ -9,6 +9,7 @@ import Bio from '../components/Bio'
 import Layout from '../components/layout'
 import { rhythm, scale } from '../utils/typography'
 
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.cosmicjsPosts

@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { rhythm } from '../utils/typography'
+
 
 export default ({ settings }) => (
   <div

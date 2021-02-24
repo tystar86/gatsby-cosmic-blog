@@ -6,7 +6,9 @@ import { graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
+import Itinerary from '../components/Itinerary'
 import { rhythm } from '../utils/typography'
+
 
 class BlogIndex extends React.Component {
   render() {
@@ -22,6 +24,8 @@ class BlogIndex extends React.Component {
       <Layout location={location}>
         <Helmet title={siteTitle} />
         <Bio settings={author} />
+        <Itinerary posts={posts} />
+        <div style={{ marginLeft: rhythm(5), marginTop: rhythm(-7) }}>
         {posts.map(({ node }) => {
           const title = get(node, 'title') || node.slug
           return (
@@ -42,6 +46,7 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
+        </div>
       </Layout>
     )
   }
