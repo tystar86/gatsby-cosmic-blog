@@ -6,9 +6,17 @@ import { graphql } from 'gatsby'
 
 import Bio from '../components/Bio'
 import Layout from '../components/layout'
-import Itinerary from '../components/Itinerary'
+import Sidebar from '../components/Sidebar'
 import { rhythm } from '../utils/typography'
 
+
+function generateSidebarItems(posts) {
+  return [{
+    title: 'Itinerary',
+    itemId: '/itinerary',
+    subNav: posts.map(post => ({title: post.node.title, itemId: post.node.slug}))
+  }]
+}
 
 class BlogIndex extends React.Component {
   render() {
@@ -24,7 +32,7 @@ class BlogIndex extends React.Component {
       <Layout location={location}>
         <Helmet title={siteTitle} />
         <Bio settings={author} />
-        <Itinerary posts={posts} />
+        <Sidebar activeItemId="" onSelect={() => {}} items={generateSidebarItems(posts)} />
         <div style={{ marginLeft: rhythm(5), marginTop: rhythm(-7) }}>
         {posts.map(({ node }) => {
           const title = get(node, 'title') || node.slug
